@@ -48,14 +48,19 @@ table {
 body *{
     font-family: Verdana, Geneva, sans-serif;
 }
+body{
+    background:rgba(254, 209, 174, .5);
+}
 header{
-    background: #F4A460;
+    background:
+        linear-gradient(rgba(135, 60, 255, 0.4), rgba(135, 60, 255, 0.0) 80%),
+        linear-gradient(-45deg, rgba(120, 155, 255, 0.9) 25%, rgba(255, 160, 65, 0.9) 75%);
     padding: 15px 0;
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 40;
-    opacity: .8;
+    opacity: .9;
 }
 header .content{
     display: flex;
@@ -73,7 +78,7 @@ header .content{
     text-decoration: none;
     padding: 10px 15px;
     color: white;
-    background:#2F4F4F;
+    background: #e55d87;
     border-radius: 5px;
     margin-left: 20px;
 }
@@ -107,6 +112,10 @@ h2{
 .about_me img{
     margin-right: 50px;
     box-shadow: 0 14px 28px #F4A460, 0 10px 10px #F4A460;
+    transition: all 3s ease;
+}
+.about_me img:hover{
+    transform: scale(1.2);
 }
 .skills{
     display: flex;
@@ -116,7 +125,7 @@ h2{
 .skills li{
     padding: 5px 10px;
     margin:0 15px 10px 0;
-    background:#F4A460;
+    background: linear-gradient(135deg, #e55d87 0%, #5fc3e4 100%);
     border:1px solid #2F4F4F;
     border-radius:4px;
     color: #0c4141;
@@ -182,10 +191,36 @@ h2{
     line-height: 27px;
     margin: 0 0 50px;
     display: inline-block;
-    border-bottom: 1px solid #F4A460;
+    position: relative;
+    
+}
+.portfolio p::before{
+    content:"";
+    display: block;
+    position: absolute;
+    top: 30px;
+    left: 0;
+    height: 3px;
+    background:
+        linear-gradient(rgba(135, 60, 255, 0.4), rgba(135, 60, 255, 0.0) 80%),
+        linear-gradient(-45deg, rgba(120, 155, 255, 0.9) 25%, rgba(255, 160, 65, 0.9) 75%);
+    animation: bor 4s infinite linear;
+}
+@keyframes bor{
+    0%{
+        width: 0px;
+    }
+    50%{
+        width: 50%;
+    }
+    100%{
+        width: 100%;
+    }
 }
 footer{
-    background:rgba(47, 79, 79, .2);
+    background:
+        linear-gradient(rgba(135, 60, 255, 0.4), rgba(135, 60, 255, 0.0) 80%),
+        linear-gradient(-45deg, rgba(120, 155, 255, 0.9) 25%, rgba(255, 160, 65, 0.9) 75%);
 }
 footer a{
     text-decoration: none;
